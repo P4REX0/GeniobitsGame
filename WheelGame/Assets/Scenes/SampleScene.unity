@@ -814,7 +814,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1153,7 +1153,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1339,10 +1339,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8459e42ffaadfe43876021fe0cbb2b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlaying: 0
   Timer: 60
-  TimerTxt: {fileID: 511738850}
+  Sections: 10
   ResultPanel: {fileID: 299316986}
+  TimerTxt: {fileID: 511738850}
+  ResultTxt: {fileID: 416935599}
+  PrizeNumber: {fileID: 694401901}
+  SelectedNumber: {fileID: 1041173754}
   Btn:
   - {fileID: 1930230623931836069}
   - {fileID: 5518870239305523107}
@@ -1354,10 +1357,6 @@ MonoBehaviour:
   - {fileID: 152810283792455377}
   - {fileID: 2332249461748063733}
   - {fileID: 9163551660138850367}
-  ResultTxt: {fileID: 416935599}
-  PrizeNumber: {fileID: 694401901}
-  SelectedNumber: {fileID: 1041173754}
-  Sections: 10
   PrizeName:
   - 3
   - 4
@@ -1381,7 +1380,7 @@ GameObject:
   - component: {fileID: 1101400090}
   - component: {fileID: 1101400089}
   m_Layer: 5
-  m_Name: text2
+  m_Name: LeftTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1668,7 +1667,7 @@ GameObject:
   - component: {fileID: 2117781852}
   - component: {fileID: 2117781851}
   m_Layer: 5
-  m_Name: text1
+  m_Name: RightTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

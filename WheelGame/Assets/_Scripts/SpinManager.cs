@@ -5,23 +5,26 @@ using TMPro;
 
 public class SpinManager : MonoBehaviour
 {
-    int randValue;
+    //Private Variables
+    private int randValue;
     private float timeInterval;
     private bool isSpining;
     private int finalAngle;
     private string PlayerInput;
+    private float totalAngle;
 
+    //Public Variabels
     [Header("Wheel Variables")]
     public float Timer = 60f;
-    public TextMeshProUGUI TimerTxt;
+    public int Sections;
     public GameObject ResultPanel;
-    public Button[] Btn;
+    public TextMeshProUGUI TimerTxt;
     public TextMeshProUGUI ResultTxt;
     public TextMeshProUGUI PrizeNumber;
     public TextMeshProUGUI SelectedNumber;
-    public int Sections;
-    float totalAngle;
-    public string[] PrizeName;
+
+    [SerializeField] private Button[] Btn; // All Buttons reference
+    [SerializeField] private string[] PrizeName; 
 
     private void Start()
     {
@@ -48,6 +51,8 @@ public class SpinManager : MonoBehaviour
         randValue = Random.Range(200, 300);
 
         timeInterval = 0.00001f * Time.deltaTime * 2;
+
+        // To Rotate Wheel 
         for (int i = 0; i < randValue; i++)
         {
             transform.Rotate(0, 0, (totalAngle / 2));
@@ -74,11 +79,12 @@ public class SpinManager : MonoBehaviour
         finalAngle = Mathf.RoundToInt(transform.eulerAngles.z);
         print(finalAngle);
 
+        //To Check result
         for (int i = 0; i < Sections; i++)
         {
             if (finalAngle == i * totalAngle)
             {
-                PrizeNumber.text = PrizeName[i];
+                PrizeNumber.text = PrizeName[i]; 
 
                 if (input == PrizeName[i])
                 {
@@ -95,6 +101,7 @@ public class SpinManager : MonoBehaviour
         }
     }
 
+    //Getting Input From User
     public void ButtonInput(string input)
     {
         ResultTxt.text = "";
@@ -103,6 +110,7 @@ public class SpinManager : MonoBehaviour
         PlayerInput = input;
     }
 
+    //Function for replay Game
     public void RestartBtn()
     {
         isSpining = true;
